@@ -1,21 +1,17 @@
-from flask import Flask, jsonify
-import pyodbc
+import psycopg2
 
-app = Flask(__name__)
-
-@app.route('/checkConnection', methods=['GET'])
-def check_connection():
-    server = 'fitbit-lastappppp.database.windows.net'
-    database = 'fitbit-lastapp'
-    username = 'idrhaAsu@fitbit-lastappppp'
-    password = 'VR2RehabVR2'
-    driver= '{ODBC Driver 17 for SQL Server}'
-
-    try:
-        with pyodbc.connect('DRIVER='+driver+';SERVER='+server+';PORT=1433;DATABASE='+database+';UID='+username+';PWD='+ password) as conn:
-            return jsonify({"connection": True})
-    except Exception as e:
-        return jsonify({"connection": False, "error": str(e)})
-
-if __name__ == '__main__':
-    app.run(debug=True)
+cnx = None
+try:
+    cnx = psycopg2.connect(
+        user="obqiwdgkne", 
+        password="41ZFD4JF1CA2MZ5J$",  # Reemplaza con tu contraseña real
+        host="idrhafitbit-server.postgres.database.azure.com", 
+        port=5432, 
+        database="idrhafitbit-database"
+    )
+    print("Conexión establecida con éxito.")
+except Exception as e:
+    print(f"Error al conectar a la base de datos: {e}")
+finally:
+    if cnx:
+        cnx.close()
