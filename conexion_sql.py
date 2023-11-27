@@ -14,10 +14,11 @@ def check_connection():
     try:
         # Reemplaza con tus propios detalles de conexión
         conn = psycopg2.connect(
-            host="idrhafitbit-server.postgres.database.azure.com",
-            dbname="idrhafitbit-database",
             user="obqiwdgkne",
-            password="41ZFD4JF1CA2MZ5J$"
+            password="41ZFD4JF1CA2MZ5J$",  # Reemplaza con la contraseña real
+            host="idrhafitbit-server.postgres.database.azure.com",
+            port=5432,
+            database="idrhafitbit-database"
         )
         conn.close()
         return jsonify({"connection": "successful"})
