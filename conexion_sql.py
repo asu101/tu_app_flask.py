@@ -4,7 +4,7 @@ cnx = None
 try:
     cnx = psycopg2.connect(
         user="obqiwdgkne", 
-        password="41ZFD4JF1CA2MZ5J$",  # Reemplaza con tu contraseña real
+        password="41ZFD4JF1CA2MZ5J$",
         host="idrhafitbit-server.postgres.database.azure.com", 
         port=5432, 
         database="idrhafitbit-database"
