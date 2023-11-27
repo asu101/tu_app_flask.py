@@ -1,2 +1,4 @@
 Flask==2.1.1
+Werkzeug==2.0.2  # o la versión que sea compatible con tu versión de Flask
 pyodbc==5.0.1
+
