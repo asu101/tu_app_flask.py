@@ -1,24 +1,24 @@
 from flask import Flask, jsonify
-import psycopg2
+import pyodbc
 
 app = Flask(__name__)
 
 @app.route('/get_data', methods=['GET'])
 def get_data():
-    # Aquí puedes agregar la lógica para obtener datos de la base de datos
-    # Por ahora, vamos a devolver un mensaje simple para probar
+    # Lógica para obtener datos de la base de datos SQL Server
     return jsonify({"message": "Datos obtenidos con éxito"})
 
 @app.route('/checkConnection', methods=['GET'])
 def check_connection():
     try:
         # Reemplaza con tus propios detalles de conexión
-        conn = psycopg2.connect(
-            user="obqiwdgkne",
-            password="41ZFD4JF1CA2MZ5J$",  # Reemplaza con la contraseña real
-            host="idrhafitbit-server.postgres.database.azure.com",
-            port=5432,
-            database="idrhafitbit-database"
+        conn = pyodbc.connect(
+            'DRIVER={ODBC Driver 17 for SQL Server};'
+            'SERVER=fitbit-lastappppp.database.windows.net;'
+            'PORT=1433;'
+            'DATABASE=fitbit-lastapp;'
+            'UID=idrhaAsu@fitbit-lastappppp;'
+            'PWD=VR2RehabVR2;'
         )
         conn.close()
         return jsonify({"connection": "successful"})
