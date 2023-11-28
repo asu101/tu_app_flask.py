@@ -13,13 +13,13 @@ def check_connection():
     try:
         # Reemplaza con tus propios detalles de conexión
         conn = pymssql.connect(
-            'DRIVER={ODBC Driver 17 for SQL Server};'
-            'SERVER=fitbit-lastappppp.database.windows.net;'
-            'PORT=1433;'
-            'DATABASE=fitbit-lastapp;'
-            'UID=idrhaAsu@fitbit-lastappppp;'
-            'PWD=VR2RehabVR2;'
+            server='fitbit-lastappppp.database.windows.net',
+            user='idrhaAsu@fitbit-lastappppp',
+            password='VR2RehabVR2',
+            database='fitbit-lastapp',
+            port=1433
         )
+
         conn.close()
         return jsonify({"connection": "successful"})
     except Exception as e:
