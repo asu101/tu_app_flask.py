@@ -1,5 +1,5 @@
 from flask import Flask, jsonify
-import pymssql
+import pyodbc
 
 app = Flask(__name__)
 
@@ -12,12 +12,15 @@ def get_data():
 def check_connection():
     try:
         # Reemplaza con tus propios detalles de conexión
-        conn = pymssql.connect(
-            server='fitbit-lastappppp.database.windows.net',
-            user='idrhaAsu@fitbit-lastappppp',
-            password='VR2RehabVR2',
-            database='fitbit-lastapp',
-            port=1433
+        conn = pyodbc.connect(
+            'DRIVER={ODBC Driver 18 for SQL Server};'
+            'SERVER=tcp:fitbit-lastappppp.database.windows.net,1433;'
+            'DATABASE=fitbit-lastapp;'
+            'UID=idrhaAsu@fitbit-lastappppp;'
+            'PWD=VR2RehabVR2;'  # Asegúrate de reemplazar esto con tu contraseña real
+            'Encrypt=yes;'
+            'TrustServerCertificate=no;'
+            'Connection Timeout=30;'
         )
 
         conn.close()
