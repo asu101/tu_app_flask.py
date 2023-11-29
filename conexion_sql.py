@@ -20,6 +20,7 @@ def check_connection():
             'PWD=VR2RehabVR2;'  # Asegúrate de reemplazar esto con tu contraseña real
             'Encrypt=yes;'
             'TrustServerCertificate=no;'
+            
             'Connection Timeout=30;'
         )
 
