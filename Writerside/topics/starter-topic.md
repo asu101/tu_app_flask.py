@@ -47,9 +47,3 @@ Para ejecutar la aplicación en un entorno local, utiliza `python [nombre_del_ar
 
 Para cualquier problema, mejora de usabilidad o solicitud de características, reportar a través del proyecto YouTrack de JetBrains.
 
-<seealso>
-    <category ref="wrs">
-        <a href="https://plugins.jetbrains.com/plugin/20158-writerside/docs/markup-reference.html">Referencia de Markup</a>
-        <a href="https://plugins.jetbrains.com/plugin/20158-writerside/docs/manage-table-of-contents.html">Gestionar el Índice de Contenidos</a>
-    </category>
-</seealso>
