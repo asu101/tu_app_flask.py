@@ -62,5 +62,5 @@ def insert_data():
 
 
 if __name__ == '__main__':
-    app.run(host='16.171.63.142', port=8080, debug=True)
+    app.run(host='0.0.0.0', port=8080, debug=True)
 
