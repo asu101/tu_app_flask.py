@@ -1,3 +1,4 @@
+import subprocess
 from flask import Flask, jsonify, request
 import pyodbc
 
@@ -8,6 +9,11 @@ app = Flask(__name__)
 def get_data():
     # Lógica para obtener datos de la base de datos SQL Server
     return jsonify({"message": "Datos obtenidos con éxito"})
+
+@app.route('/webhook', methods=['POST'])
+def webhook():
+    subprocess.Popen(["/home/ec2-user/update_app.sh"])
+    return 'Webhook recibido'
 
 
 @app.route('/checkConnection', methods=['GET'])
