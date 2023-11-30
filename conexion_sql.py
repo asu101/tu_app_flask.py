@@ -33,7 +33,7 @@ def check_connection():
         )
 
         conn.close()
-        return jsonify({"connection": "successful - prueba"})
+        return jsonify({"connection": "successful - prueba 0.2"})
     except Exception as e:
         return jsonify({"connection": "failed", "error": str(e)})
 
