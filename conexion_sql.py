@@ -25,10 +25,9 @@ def check_connection():
             'SERVER=tcp:fitbit-lastappppp.database.windows.net,1433;'
             'DATABASE=fitbit-lastapp;'
             'UID=idrhaAsu@fitbit-lastappppp;'
-            'PWD=VR2RehabVR2;'
+            'PWD=VR2RehabVR2;'  
             'Encrypt=yes;'
             'TrustServerCertificate=no;'
-
             'Connection Timeout=30;'
         )
 
